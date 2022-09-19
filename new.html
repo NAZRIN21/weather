@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="./wea.css">
+
+</head>
+
+<body>
+
+    <div id="n1"><br>
+        <h1 style="text-align: center; margin-top: 50px;font-style: italic;color: white;font-weight: bold;">Weather</h1>
+
+        <div class="container   mt-5  bg-light" style="width: 600px; border-radius: 20px;height: 250px;" id="n2">
+            <div class="row p-5">
+                <div class="col-3"></div>
+                <div class="col-6">
+                    <input id="cname" type="text" placeholder="enter city name" class="form-control"
+                        style="width:300px ;margin-left: -20px;"><br>
+                    <button class="btn btn-info" type="button" onclick="search()">search</button><br><br>
+                    <h1 style="font-weight:bold ; font-size: medium;">Loading....</h1>
+                </div>
+
+                <div class="col-3"></div>
+
+            </div>
+
+        </div><br><br>
+
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4 bg-light text-dark" id="result" ></div>
+            <div class="col-4"></div>
+            <!-- <img src="./images/ooo.jpg" class="card-img-top" alt="..."  style="width: 500px;height: 500px;"> -->
+
+        </div>
+    </div>
+
+</body>
+
+
+<script>
+    function search() {
+        city = cname.value
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=5b4bee0ba241d092159faf007e166080`)
+            .then(res => res.json())
+            .then(data => displaydata(data))
+    }
+    function displaydata(cityDetails) {
+
+    cname=cityDetails.name
+    Temperature=cityDetails.main.temp
+    WeatherType=cityDetails.weather[0].main
+    windspeed=cityDetails.wind.speed
+    lattitude=cityDetails.coord.lat
+    longitude=cityDetails.coord.lon
+
+
+    
+
+    htmldata=`<div class="card mb-3  text-dark">
+
+  <div class="card-body">
+    <h5 class="card-title">${cname}</h5>
+    <p class="card-text">Temp: ${Temperature}</p>
+    <p class="card-text">Weather: ${WeatherType}</p>
+    <p class="card-text">Speed: ${windspeed}</p>
+    <p class="card-text">Lattitude: ${lattitude}</p>
+    <p class="card-text">Longitude: ${longitude}</p>
+
+    
+  </div>
+</div>
+</div>`
+result.innerHTML=htmldata
+}
+
+</script>
+
+
+
+</html>
