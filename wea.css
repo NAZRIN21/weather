@@ -1,11 +1,12 @@
 #n1{
     background-image: url("./images/pexels-photo-209831.webp");
     background-size: cover;
-    height: 1300px;
-    width: 100%;
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    height: 800px;
 }
 #n2{
-    background-image: url("./images/pexels-photo-209831.webp");
+    /* background-image: url("./images/pexels-photo-209831.webp"); */
     background-color: black;
     
 }
