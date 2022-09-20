@@ -131,7 +131,7 @@ result.innerHTML=htmldata
         <br>
         <div class="row" style="background-color: black;color: #eceff1;">
             <div class="col-4"></div>
-            <div class="col-4" id="result" style="background-color: black;color: #eceff1;"></div>
+            <div class="col-4" id="result" style="background-color: black;color: #eceff1; height: 300px;"></div>
             <div class="col-4"></div>
         </div>
       
@@ -154,18 +154,18 @@ result.innerHTML=htmldata
         htmldata = `
 <div class="row bg-dark">
             <div class="col" style="color:white">
-              ${cname}</div>
+                     ${cname}</div>
             <div class="col" style="color:white">
-                temp : ${temp}</div>
+             temp :  ${temp}</div>
             <div class="col" style="color:white">
-             type : ${weathertype}</div>
+             type :  ${weathertype}</div>
             <div class="col" style="color:white">
              Speed : ${windspeed}</div>
                 <div class="col" style="color:white">
-              lat :  ${lattitude}</div>
+             lat   :   ${lattitude}</div>
          </div>
          <div class="col" style="color:white">
-              lon : ${longitude}</div>
+             lon   :   ${longitude}</div>
          </div>`
         result.innerHTML = htmldata
     }
