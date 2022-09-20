@@ -111,7 +111,7 @@ result.innerHTML=htmldata
         <div class="col-4"></div>
         <div class="col-4">
             <h1 class="text-center mt-5 p-3"
-                style="color:#eceff1;font-family:'josefin Sans', sans-serif; font-weight: bolder;background-color:#064163; border-radius: 10px;">
+                style="color:#eceff1;font-family:'josefin Sans', sans-serif; font-weight: bolder; ">
                 Weather </h1>
         </div>
         <div class="col-4"></div>
@@ -129,9 +129,9 @@ result.innerHTML=htmldata
 
         </div>
         <br>
-        <div class="row">
+        <div class="row" style="background-color: black;color: #eceff1;">
             <div class="col-4"></div>
-            <div class="col-4" id="result"></div>
+            <div class="col-4" id="result" style="background-color: black;color: #eceff1;"></div>
             <div class="col-4"></div>
         </div>
       
@@ -152,11 +152,11 @@ result.innerHTML=htmldata
 
 
         htmldata = `
-<div class="row">
+<div class="row bg-dark">
             <div class="col" style="color:white">
                 ${cname}</div>
             <div class="col" style="color:white">
-                ${temp}</div>
+              ${temp}</div>
             <div class="col" style="color:white">
                 ${weathertype}</div>
             <div class="col" style="color:white">
